@@ -15,14 +15,12 @@
 
 */
 /* cambio 1.3
-Francisco Espinoza
     se elimina tribunal constitucional ya que no es parte de la problematica del trabajo
     se elimina Struct camaraDeOrigen ya que pasara a ser una funcion dependiente del tema del proyecto y pasara a ser struct congreso
     se agrega "Cargo" dentro del struct persona para diferenciar diputados y senadores
     se agrego funcion camaraRevisoria (POR REVISAR) la cual puede que no cumpla con lo propuesto o que funcione con fallas etc.
 */
 /* cambio 1.4
-Francisco Espinoza
     se agrego el eliminar diputado
     se agrego el eliminar senador
     se agrego el agregar senador
@@ -32,25 +30,21 @@ Francisco Espinoza
 */
 
 /* cambio 1.5
-Joaquin Muñoz
     se agrego la funcion promulgacion o veto presidencial
     se agregó la funcion al menú
 */
 /* cambio 1.6
-Rigoberto Canales
     se agrega la funcion comision mixta
     se agrega la funcion a menu
     se hacen cambios en main para el uso de comision mixta
 */
 
 /* Cambio 1.7
-Francisco Espinoza
     se modifico la funcion de camara de origen ya que esta no contabilizaba los votos
     se modifico el main ya que no se inicalizaba bien el Agregar y Mostrar diputados y senadores
 */
 
 /* Cambio 1.8
-Francisco Espinoza
     se agrego NodoPropuestas
     se agrego insertarPropuesta (al ABB)
     se modifico el crearPropuesta
@@ -59,7 +53,7 @@ Francisco Espinoza
     SE DEBE MODIFICAR:
     SE DEBE AGREGAR EL ABB PARA RECORRER LA PROPUESTA
 
-        cambio 1.8.1 Francisco Espinoza
+        cambio 1.8.1
             se arreglo la funcion de camara de origen:
                 -recorre el nodoProyecto y lo busca por ID
                 - se puede ejecutar mas de 1 vez con diferentes proyectos
@@ -69,7 +63,7 @@ Francisco Espinoza
         -PROMULGACION Y VETO PRESIDENCIAL
     ---SIN REVISAR---
 
-        cambio 1.8.2 Francisco espinoza
+        cambio 1.8.2
         se arreglaron las funcionciones de comision Mixta y promulgacion o veto presidencial
             - las dos recorren el nodoProyecto y busca el proyecto en cuestion a travez del ID
             - se puede ejecutar mas de 1 vez con diferentes proyectos
@@ -83,7 +77,6 @@ Francisco Espinoza
 */
 
 /* Cambio 1.9
-Simon Ledezma
 
     // cosas que he notado y que hay que arreglar:
         - agregar datos estadisticos
@@ -121,7 +114,6 @@ Simon Ledezma
 */
 
 /* cambios 1.10
-Francisco Espinoza
     - se modifico la funcion de comision mixta, ahora busca el proyecto por ID
     - se arreglo uno de los 10 warnings de VS code
     -se encuentra probema en agregar presidente (segmentation fault)
@@ -131,14 +123,12 @@ Francisco Espinoza
 */
 
 /* cambios 1.11
-Francisco espinoza
     - se arreglan los structs del main
     - se arreglan los warnings de datos sin utilizar
     ---SE DEBE PROBAR EN TURBO C---
 */
 
 /* cambios 1.12
-Francisco Espinoza
     -se arregla el codigo para que compile en turbo C
     - actualmente solo contiene 1 warning en la maquina virtual
 */
@@ -151,7 +141,6 @@ Francisco Espinoza
 */
 
 /* cambios 1.13
-Simon Ledezma
 
     *** cambios ***
 
@@ -191,7 +180,6 @@ Simon Ledezma
 */
 
 /* cambios 1.14
-simon ledezma
     - se cambia el estado de la propuesta a int, 0 = en tramite, 1 = aprobada, 2 = rechazada
     - se agrega la funcion de eliminarCiudadano
     - se mueve el menú para que quede ordenado de forma que esten las funciones de cada tipo agrupadas
@@ -208,7 +196,6 @@ simon ledezma
 */
 
 /* cambios 1.15
-simon ledezma
     - se agrega la funcion de eliminarCiudadano al menu q se me olvido
     - se revisaron todos los warnings que tira clion
     - se quitaron todas las tildes del programa pq el clion no las muestra cmo el visual
