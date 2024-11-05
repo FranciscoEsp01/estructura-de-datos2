@@ -1344,7 +1344,8 @@ struct nodoBoletin* publicarLeyEnBoletin(struct nodoBoletin *boletinEstado, stru
 }
 
 void poblarTribunalConstitucional(struct persona tribunalConstitucional[10]) {
-    for (int i = 0; i < 10; i++) {
+    int i;
+    for (i = 0; i < 10; i++) {
         tribunalConstitucional[i].edad = 0;
     }
 }
@@ -1554,13 +1555,14 @@ int contarPropuestasAprobadas(struct nodoPropuestas *raizPropuestas) {
 void mostrarPorcentajeProyectosAprobados(struct nodoPropuestas *raizPropuestas) {
     int cantidadPropuestas = contarPropuestas(raizPropuestas);
     int cantidadAprobadas = contarPropuestasAprobadas(raizPropuestas);
+    float porcentajeAprobadas;
 
     if (cantidadPropuestas == 0) {
         printf("\nNo hay propuestas registradas.\n");
         return;
     }
 
-    float porcentajeAprobadas = ((float)cantidadAprobadas / cantidadPropuestas) * 100;
+    porcentajeAprobadas = ((float)cantidadAprobadas / cantidadPropuestas) * 100;
     printf("\nPorcentaje de propuestas aprobadas: %.2f%%\n", porcentajeAprobadas);
     printf("Cantidad de propuestas: %d\n", cantidadPropuestas);
     printf("Cantidad de propuestas aprobadas: %d\n", cantidadAprobadas);
@@ -1610,14 +1612,6 @@ void mostrarMenu() {
 /*LINEAS ARREGLAR: 1245, 1274, 1342, 1362*/ // dios sabrá que hay que arreglar ahora
 int main() {
     struct ProcesoLegislativo *procesoLegislativo;
-    procesoLegislativo = (struct ProcesoLegislativo *)malloc(sizeof(struct ProcesoLegislativo));
-
-    procesoLegislativo->congreso = NULL;
-    procesoLegislativo->propuesta = NULL; // arbol de propuestas
-    procesoLegislativo->ciudadanos = NULL;
-    procesoLegislativo->presidente = NULL;
-    procesoLegislativo->boletinEstado = NULL; // lista de boletines
-
     struct persona *personaPresidente = NULL;
     struct propuesta *propuestaEncontrada = NULL;
     struct propuesta *propuesta = NULL;
@@ -1626,7 +1620,17 @@ int main() {
     char rut[20];  // Cambiado a array estático
     int salir = 0;
     int idPropuesta;
+    int esConstitucional;
 
+    procesoLegislativo = (struct ProcesoLegislativo *)malloc(sizeof(struct ProcesoLegislativo));
+
+    procesoLegislativo->congreso = NULL;
+    procesoLegislativo->propuesta = NULL; // arbol de propuestas
+    procesoLegislativo->ciudadanos = NULL;
+    procesoLegislativo->presidente = NULL;
+    procesoLegislativo->boletinEstado = NULL; // lista de boletines
+
+    
     // Inicializa el congreso y le asigna memoria, si falla retorna 1
     procesoLegislativo->congreso = (struct congreso *)malloc(sizeof(struct congreso));
     if (procesoLegislativo->congreso == NULL) {
@@ -1835,7 +1839,6 @@ int main() {
                 limpiarBuffer();
 
                 propuesta = buscarPropuesta(procesoLegislativo->propuesta, idPropuesta);
-                int esConstitucional;
                 if (propuesta == NULL) {
                     printf("Propuesta con ID %d no encontrada.\n", idPropuesta);
                 } else {
